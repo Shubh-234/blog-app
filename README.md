@@ -1,2 +1,4 @@
 # blog-app
-blog app made in mern stack 
+
+
+## how to run this application locally
