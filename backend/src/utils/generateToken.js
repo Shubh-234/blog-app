@@ -5,9 +5,9 @@ dotenv.config();
 
 async function signToken (user) {
     const token = jwt.sign({
-            userId: user._id,
+            userId: user._id.toString(),
             userEmail: user.email
-    },process.env.JWT_SECRET,{expiresIn: '10m'});
+    },process.env.JWT_SECRET,{expiresIn: '1h'});
     
     return token;
 }

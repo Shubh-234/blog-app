@@ -16,7 +16,7 @@ function validateToken (req,res,next) {
     const token = authHeader.split(' ')[1];
     if(!token){
         console.log("accessing protected routes without authentication");
-        return res.status(409).json({
+        return res.status(403).json({
             success : false,
             message : "Authenticated users allowed only"
         })

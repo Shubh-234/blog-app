@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
-const {signToken} = require('../utils/generateToken')
+const {signToken} = require('../utils/generateToken');
+const { sign } = require('crypto');
 
 const signupUser = async (req,res) => {
     try {
@@ -41,11 +42,20 @@ const signupUser = async (req,res) => {
 
         await newUser.save();
 
+        const token = await signToken(newUser);
+
+        const userResponse = {
+            _id: newUser._id,
+            email : newUser.email,
+            name: newUser.name || null
+        }
+
 
         return res.status(201).json({
             success : true,
             message : "User registered successfully",
-            user : newUser,
+            user : userResponse,
+            token
         })
         
 
@@ -89,7 +99,7 @@ const loginUser = async (req,res) => {
         return res.status(200).json({
             success : true,
             message : "User logged in successfully",
-            checkUser,
+            user: checkUser,
             token
         })
 

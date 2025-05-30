@@ -1,4 +1,5 @@
 const Blog = require('../models/Blog');
+const User = require('../models/User');
 const mongoose = require('mongoose');
 
 
@@ -105,7 +106,7 @@ const getBlogById = async (req,res) => {
                 message: "Please provide which blog to retreive"
             })
         }
-        const blog = await Blog.findById(id);
+        const blog = await Blog.findById(id).populate("author", "email")
 
         if(!blog){
             return res.status(400).json({
@@ -240,5 +241,34 @@ const deleteBlog = async (req,res) => {
 }
 
 
+const getBlogByAuthor = async (req,res) => {
+    try {
+        const authorId = req.params.id;
+        if(authorId){
+            return res.status(400).json({
+                success : false,
+                message : "no author provided"
+            })
+        }
 
-module.exports = {createBlog,getBlogs,getBlogById,updateBlog,deleteBlog}
+        const blogs = await Blog.find({
+            author: authorId
+        })
+
+        res.status(200).json({
+            success: true,
+            message : `Blogs associated with the user ${authorId}`,
+            blogs
+        })
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            success : false,
+            message: "Internal server error"
+        })
+    }
+}
+
+
+
+module.exports = {createBlog,getBlogs,getBlogById,updateBlog,deleteBlog,getBlogByAuthor}
