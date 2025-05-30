@@ -6,19 +6,17 @@ This is a MERN stack application with separate backend and frontend folders.
 
 ## Folder Structure
 
-BLOG-APP
-│
-├── backend
-│ ├── src
-│ │ └── index.js # Backend server entry point
-│ └── package.json
-│
-├── frontend
-│ └── package.json
-│
+BLOG-APP  
+│  
+├── backend  
+│ ├── src  
+│ │ └── index.js  # Backend server entry point  
+│ └── package.json  
+│  
+├── frontend  
+│ └── package.json  
+│  
 └── .gitignore
-
-
 
 ---
 
@@ -30,20 +28,13 @@ BLOG-APP
 
 ---
 
-## How to Run the Application
+## Environment Variables Setup
 
-### 1. Backend Setup and run
+### Backend
 
-- Open your terminal and navigate to the backend folder:
-  ```bash
-  cd backend
-  npm install
-  npm run dev
-  
-### 2. Frontend Setup and run
+Create a `.env` file inside the `backend` folder (alongside `package.json`) with your environment variables, for example:
 
-- Open your terminal and navigate to the frontend folder:
-  ```bash
-  cd frontend
-  npm install
-  npm run dev
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
