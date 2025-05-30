@@ -7,7 +7,7 @@ const authRoutes = require('./routes/authRoutes')
 const blogRoutes = require('./routes/blogRoutes')
 
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://your-frontend-domain.com'], // add all origins you want to allow
+  origin: ['http://localhost:5173', 'https://blog-app-iota-rose.vercel.app/'], // add all origins you want to allow
   credentials: true, // if you use cookies or auth headers
 };
 
