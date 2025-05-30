@@ -6,20 +6,20 @@ This is a MERN stack application with separate backend and frontend folders.
 
 ## Folder Structure
 
-BLOG-APP
-│
-├── backend
-│ ├── src
-│ │ └── index.js # Backend server entry point
-│ └── package.json
-│
-├── frontend
-│ └── package.json
-│
+BLOG-APP  
+│  
+├── backend  
+│ ├── src  
+│ │ └── index.js  # Backend server entry point  
+│ └── package.json  
+│  
+├── frontend  
+│ └── package.json  
+│  
 └── .gitignore
 
-yaml
-Copy
+---
+
 
 ---
 
