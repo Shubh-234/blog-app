@@ -6,14 +6,16 @@ const cors = require('cors');
 const authRoutes = require('./routes/authRoutes')
 const blogRoutes = require('./routes/blogRoutes')
 
-const corsOptions = {
-  origin: ['http://localhost:5173', 'https://blog-app-iota-rose.vercel.app/'], // add all origins you want to allow
-  credentials: true, // if you use cookies or auth headers
-};
+
 
 const app = express();
-app.use(cors(corsOptions));
 app.use(express.json());
+
+app.use(cors({
+  origin: ['https://blog-app-iota-rose.vercel.app','http://localhost:5173'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+  credentials: true,
+}));
 
 dotenv.config();
 const PORT = process.env.PORT || 4000

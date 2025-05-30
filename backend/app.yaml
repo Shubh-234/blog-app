@@ -1,0 +1,5 @@
+runtime: nodejs20
+
+env_variables:
+  MONGO_URI: "mongodb+srv://shubhankarbhanot:eNSHP7UWrcoVrUOT@blogcluster.uugykiu.mongodb.net/?retryWrites=true&w=majority&appName=blogCluster"
+  JWT_SECRET: "secret"
