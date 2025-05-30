@@ -74,9 +74,9 @@ npm run dev
 This will install frontend dependencies and start the React development server (usually on port 3000).
 
 ## Notes
-### Make sure your MongoDB instance is running and the connection string in MONGO_URI is correct.
-### The frontend expects the backend API to be available at the URL specified in REACT_APP_API_URL.
-### You can change the ports in .env files if needed to avoid conflicts.
+###### Make sure your MongoDB instance is running and the connection string in MONGO_URI is correct.
+###### The frontend expects the backend API to be available at the URL specified in REACT_APP_API_URL.
+###### You can change the ports in .env files if needed to avoid conflicts.
 
 
 
